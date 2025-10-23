@@ -91,6 +91,19 @@ const letterCaseCounts = (str) => {
 
 const getNamesOfGreedyGnomes = (gnomes) => {
   // Your code here
+  if (gnomes.length === 0){
+    return [];
+  }
+
+  const arr = [];
+  for(let i = 0; i < gnomes.length; i++){
+      const gnome = gnomes[i];
+      const length = gnome.stolenDecorations.length;
+      if( length > 1){
+        arr.push(gnome.name);
+      }
+  }
+  return arr;
 };
 
 // ============================================

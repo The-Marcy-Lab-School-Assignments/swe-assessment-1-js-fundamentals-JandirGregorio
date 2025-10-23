@@ -13,8 +13,8 @@
       "FrScTe5": 1,
       "FrScTe6": 1,
       "FrScTe7": 1,
-      "FrScTe8": 0,
-      "FrScTe9": 0
+      "FrScTe8": 1,
+      "FrScTe9": 1
     }
   },
   "idToTestNameHash": {
@@ -47,7 +47,7 @@
   },
   "humanReadable": {
     "Debug Tests": "0/3",
-    "finalTestScore": "FINAL SCORE: 7/12",
-    "From Scratch Tests": "7/9"
+    "finalTestScore": "FINAL SCORE: 9/12",
+    "From Scratch Tests": "9/9"
   }
 }
