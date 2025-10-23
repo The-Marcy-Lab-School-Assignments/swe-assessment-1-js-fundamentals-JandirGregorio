@@ -8,7 +8,7 @@ Write your responses directly in this file. Follow markdown formatting guideline
 
 ### Question 1
 
-I identified a **ReferenceError**. The `currentStatus` variable is declared inside both the `if` and `else` statements. That makes `currentStatus` a local variable inside the `if-else` estatements. After the `isReuben` boolean is evaluated to either `true` or `false`, we exit the statement and `currentStatus` will not exist anymore. To fix, we can **declare** `currentStatus` using `let` before going into the `if-else` statement and reassign the variable inside.
+I identified a **ReferenceError**. The `currentStatus` variable is declared inside both the `if` and `else` statements. That makes `currentStatus` a local variable inside the `if-else` estatements. After the `isReuben` boolean is evaluated to either `true` or `false`, we exit the statement and `currentStatus` will not exist anymore. To fix this, we can **declare** `currentStatus` using `let` before going into the `if-else` statement and reassign the variable inside.
 
 ```js
 const react = (isReuben) => {
@@ -70,7 +70,7 @@ This code will log the following to the terminal:
 
 ### Question 4
 
-**Functions** in **JavaScript** usually take a fixed number of parameters, and when invoking the function, we use the same number of **arguments**. However, let's say we wanted a function that takes an indefinite number of parameters. Instead of writing several functions with specific numbers of parameters, we can use **rest parameters**. They allow you to pass in as many **arguments** to the function in the form of an **array**.
+**Functions** in **JavaScript** usually take a fixed number of parameters, and when invoking the function, we use the same number of **arguments**. However, let's say we wanted a function that takes an indefinite number of **arguments**. Instead of writing several functions with specific numbers of parameters, we can use **rest parameters**. They allow you to pass in as many **arguments** to the function in the form of an **array**.
 
 To turn a regular _parameter_ to a _rest paremeter_, we add three dots `...` before the parameter's name.
 
@@ -124,12 +124,12 @@ When we call `campusClassroom`, it prints `'Welcome to class! Feel free to use t
 ### Question 6
 
 In **JavaScript**, **modules** represent different files with specific functionalities. We can use them in a main program to work in harmony.
-In programming, **modules** are important because they allow programmers to organize our code, so we don't have everything in the same file. By doing this, we improve readability and it's easier to identify bugs when the project grows in complexity. We refer to this as **separation of concers** as we have dedicated files with different purposes.
+In programming, **modules** are important because they allow programmers to organize our code, so we don't have everything in the same file. By doing this, we improve readability and it's easier to identify bugs when the project grows in complexity. We refer to this as **separation of concerns** as we have dedicated files with different purposes.
 
-Consider the have the following program:
+Consider the following program:
 
 ```js
-//name of file: greeting-bye.js
+//filename: greeting-bye.js
 // prints a greeting
 const printGreeting = () => {
   console.log("Hello World!");
@@ -151,7 +151,7 @@ We have a file `greeting-bye.js` containing two functions: `printGreeting()` and
 To use these functions in another file we do the following:
 
 ```js
-// file name: main.js
+// filename: main.js
 const { printGreeting, printBye } = require("./greeting-bye.js");
 const main = () => {
   printGreeting();
@@ -159,7 +159,7 @@ const main = () => {
 };
 ```
 
-We import the functions from `greeting-bye.js` by writing the `require` key word. By using `const {printGreeting, printBye} = require("./greeting-bye.js')`, we can acess the functions from `greeting-bye.js` directly within `main.js`.
+We import the functions from `greeting-bye.js` by writing the `require` key word. By using `const {printGreeting, printBye} = require("./greeting-bye.js')`, we can access the functions from `greeting-bye.js` directly within `main.js`.
 
 ### Question 7
 
