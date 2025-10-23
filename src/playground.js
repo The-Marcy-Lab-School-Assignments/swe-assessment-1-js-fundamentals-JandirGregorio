@@ -1,11 +1,9 @@
-const react = (isReuben) => {
-  if (isReuben) {
-    let currentStatus = 'Everything is just fine';
-  } else {
-    let currentStatus = 'Time to panic.'
-  }
-  
-  console.log(currentStatus);
-}
+const {players,
+  increaseScore,
+  decreaseScore,
+  resetAllScores,
+  getTopScorer,
+} = require('./modify-with-video.js');
 
-react(true);
+increaseScore('Alex');
+console.log(players);
