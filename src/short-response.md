@@ -68,6 +68,8 @@ This code will log the following to the terminal:
 'Laisha is the hardest working person in the room.'
 ```
 
+This occurs because the variable `theHustler = "Laisa"` has a global scope and `theHustler = "Paul"` has a block scope. This means that the block scope variable only exists within the function and can't be accessed from outside of it. For instance, when `shoutout()` is ran, `theHustler` will hold the value `"Paul"`. However, when `` console.log(`${theHustler} is also the hardest working person in the room.`)  `` is ran, `theHustler` will now hold `"Laisa"`, as it's a global variable, and `theHustler` from the function is out of scope.
+
 ### Question 4
 
 **Functions** in **JavaScript** usually take a fixed number of parameters, and when invoking the function, we use the same number of **arguments**. However, let's say we wanted a function that takes an indefinite number of **arguments**. Instead of writing several functions with specific numbers of parameters, we can use **rest parameters**. They allow you to pass in as many **arguments** to the function in the form of an **array**.
@@ -178,7 +180,7 @@ After this code runs, `fruits` will hold `['apple', 'banana', 'cherry', 'date']`
 
 We make a copy of the array to make it a pure function becuase we don't want to **mutate** the original array.
 
-We wouldn't want to alter the original array because the array could be holding important data. If we don't make a copy, we could **mutate** the original array permanentely.
+We wouldn't want to alter the original array because the array could be holding important data. If we don't make a copy, we could **mutate** the original array permanentely. Additionally, an array is a **reference type** and if we don't return a copy, the output can be altered in unexpected ways. This will make the code unpredictable and will break our program. If we provide the original array, the function then becomes **impure**.
 
 Taking the previous code as an example. Considering that `fruits` holds four elements, if we call the `removeLastPurely()` function four times, it will remove all elements from the array.
 
