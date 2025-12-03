@@ -15,16 +15,15 @@
 
 const petJudger = (petBreed, petName) => {
   // Your code here
-  if (!petBreed || !petName){
+  if (!petBreed || !petName) {
     console.log('Missing information. Please provide a valid pet.');
-  }
-  else if (petBreed === 'dog'){
+  } else if (petBreed === 'dog') {
     console.log(`I love dogs! ${petName} is so cute!`);
-  } else if (petBreed === 'cat'){
+  } else if (petBreed === 'cat') {
     console.log(`I love cats! ${petName} is so cute!`);
-  } else if (petBreed === 'turtle'){
+  } else if (petBreed === 'turtle') {
     console.log(`Who doesn't love a good turtle? ${petName} is the tops.`);
-  } else if (petBreed === 'snake'){
+  } else if (petBreed === 'snake') {
     console.log(`Not a fan, please take ${petName} and leave.`);
   } else {
     console.log('What an...interesting pet.');
@@ -36,7 +35,7 @@ const petJudger = (petBreed, petName) => {
 // ============================================
 
 const loopFromOneUpToAnother = (firstNum, secondNum) => {
-  for (let i = firstNum; i < secondNum; i++){
+  for (let i = firstNum; i < secondNum; i++) {
     console.log(i);
   }
 };
@@ -47,8 +46,8 @@ const loopFromOneUpToAnother = (firstNum, secondNum) => {
 
 const shoutEveryLetterForLoop = (str) => {
   // Your code here
-  for(let i = 0; i < str.length; i++){
-    console.log(`${str[i].toUpperCase()}!`)
+  for (let i = 0; i < str.length; i++) {
+    console.log(`${str[i].toUpperCase()}!`);
   }
 };
 
@@ -59,21 +58,18 @@ const shoutEveryLetterForLoop = (str) => {
 const letterCaseCounts = (str) => {
   // Your code here
   const characters = {
-    lowercase : 0,
-    uppercase : 0,
-    neither : 0
+    lowercase: 0,
+    uppercase: 0,
+    neither: 0,
   };
-
-  for(let i = 0; i < str.length; i++){
+  for (let i = 0; i < str.length; i++) {
     const char = str[i];
-    if(/[a-z]/.test(char)){
-      characters['lowercase']++;;
-    }
-    else if(/[A-Z]/.test(char)){
-      characters['uppercase']++;
-    }
-    else {
-      characters['neither']++;
+    if (/[a-z]/.test(char)) {
+      characters.lowercase++;
+    } else if (/[A-Z]/.test(char)) {
+      characters.uppercase++;
+    } else {
+      characters.neither++;
     }
   }
   return characters;
@@ -85,15 +81,7 @@ const letterCaseCounts = (str) => {
 
 const getNamesOfGreedyGnomes = (gnomes) => {
   // Your code here
-  const arr = [];
-  for(let i = 0; i < gnomes.length; i++){
-      const gnome = gnomes[i];
-      const length = gnome.stolenDecorations.length;
-      if( length > 1){
-        arr.push(gnome.name);
-      }
-  }
-  return arr;
+  return gnomes.filter(gnome => gnome.stolenDecorations.length > 1).map(gnome => gnome.name);
 };
 
 // ============================================

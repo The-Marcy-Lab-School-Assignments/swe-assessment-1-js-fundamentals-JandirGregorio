@@ -25,15 +25,14 @@
 
 const players = [
   { name: 'Taylor', score: 0 },
-  { name: 'Jordan', score: 0 }, 
-  { name: 'Alex', score: 0 }, 
+  { name: 'Jordan', score: 0 },
+  { name: 'Alex', score: 0 },
   { name: 'Morgan', score: 0 },
 ];
 
-
 // increaseScore takes a name and looks for a match in the array of players
 const increaseScore = (name) => {
-  //traverse the array of players
+  // traverse the array of players
   for (let i = 0; i < players.length; i++) {
     // if the the player at index i matches the name passed into the function, add 1 to the score
     if (players[i].name === name) {
@@ -56,7 +55,7 @@ const decreaseScore = (name) => {
 const resetAllScores = () => {
   for (let i = 0; i < players.length; i++) {
     // create variable to hold current player
-    let player = players[i];
+    const player = players[i];
     resetSingleScore(player);
   }
 }
@@ -74,14 +73,14 @@ const getTopScorer = () => {
 
   // traverse the array of players
   for (let i = 0; i < players.length; i++) {
-    // if the current score is bigger than our current max score, assign maxScore to the score at index i
+    // if the current score > current max score, assign maxScore to the score at index i
     // assign topPlayer to the player's name with the highest score
     if (players[i].score > maxScore) {
       maxScore = players[i].score;
       topPlayer = players[i].name;
     }
   }
-  //return the player with the highes score
+  // return the player with the highes score
   return topPlayer;
 }
 
@@ -93,12 +92,14 @@ increaseScore('Alex'); // Alex's score = 1
 increaseScore('Alex'); // Alex's score = 2
 decreaseScore('Jordan'); // Jordan's score = -1
 console.log(players); // logs all players and their scores
-/*players = [
+
+/* players = [
   { name: 'Taylor', score: 0 },
-  { name: 'Jordan', score: -1}, 
-  { name: 'Alex', score: 2}, 
+  { name: 'Jordan', score: -1},
+  { name: 'Alex', score: 2},
   { name: 'Morgan', score: 0 },
-];*/
+]
+*/
 console.log(getTopScorer()); // gets the player with the highest score, it should return Alex
 
 resetAllScores(); // it resets all scores to 0
@@ -106,8 +107,8 @@ console.log(players); // logs player's names and scores
 /*
 players = [
   { name: 'Taylor', score: 0 },
-  { name: 'Jordan', score: 0}, 
-  { name: 'Alex', score: 0}, 
+  { name: 'Jordan', score: 0},
+  { name: 'Alex', score: 0},
   { name: 'Morgan', score: 0 },
 ];
 */
