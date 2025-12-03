@@ -20,7 +20,7 @@
   - The bugs you found (what's wrong and why)
   - The fixes you implemented
 
-  ADD YOUR LOOM LINK HERE: __________
+  ADD YOUR LOOM LINK HERE: https://www.loom.com/share/ee32c11aa19b4a6b80761c9279c382de
 */
 
 const players = [
@@ -30,44 +30,57 @@ const players = [
   { name: 'Morgan', score: 0 },
 ];
 
+// increaseScore takes a name and looks for a match in the array of players
 const increaseScore = (name) => {
-  for (let i = 0; i <= players.length; i++) {
-    if (players[i].name = name) {
+  // traverse the array of players
+  for (let i = 0; i < players.length; i++) {
+    // if the the player at index i matches the name passed into the function, add 1 to the score
+    if (players[i].name === name) {
       players[i].score += 1;
     }
   }
 }
-
+// decreaseScore takes a name and looks for a match in the array of players
 const decreaseScore = (name) => {
+  // traverse the array of players
   for (let i = 0; i < players.length; i++) {
+    // if the the player at index i matches the name passed into the function, add 1 to the score
     if (players[i].name === name) {
       players[i].score -= 1;
     }
   }
 }
 
+// this function resets all scores to 0
 const resetAllScores = () => {
   for (let i = 0; i < players.length; i++) {
-    let player = players[i];
+    // create variable to hold current player
+    const player = players[i];
     resetSingleScore(player);
   }
 }
-
+// takes in a player's name and reset the score to 0
 const resetSingleScore = (player) => {
-  score = 0;
+  player.score = 0;
 }
 
+// This function looks for the player with the highest score
 const getTopScorer = () => {
+  // creates two variable containing the current max score
+  // and the variable that will hold the top player
   let maxScore = -Infinity;
   let topPlayer;
 
+  // traverse the array of players
   for (let i = 0; i < players.length; i++) {
+    // if the current score > current max score, assign maxScore to the score at index i
+    // assign topPlayer to the player's name with the highest score
     if (players[i].score > maxScore) {
       maxScore = players[i].score;
       topPlayer = players[i].name;
     }
   }
-
+  // return the player with the highes score
   return topPlayer;
 }
 
@@ -75,15 +88,31 @@ const getTopScorer = () => {
 // Testing the functions
 // ============================================
 
-increaseScore('Alex');
-increaseScore('Alex');
-decreaseScore('Jordan');
-console.log(players);
-console.log(getTopScorer());
+increaseScore('Alex'); // Alex's score = 1
+increaseScore('Alex'); // Alex's score = 2
+decreaseScore('Jordan'); // Jordan's score = -1
+console.log(players); // logs all players and their scores
 
-resetAllScores();
-console.log(players);
-console.log(getTopScorer());
+/* players = [
+  { name: 'Taylor', score: 0 },
+  { name: 'Jordan', score: -1},
+  { name: 'Alex', score: 2},
+  { name: 'Morgan', score: 0 },
+]
+*/
+console.log(getTopScorer()); // gets the player with the highest score, it should return Alex
+
+resetAllScores(); // it resets all scores to 0
+console.log(players); // logs player's names and scores
+/*
+players = [
+  { name: 'Taylor', score: 0 },
+  { name: 'Jordan', score: 0},
+  { name: 'Alex', score: 0},
+  { name: 'Morgan', score: 0 },
+];
+*/
+console.log(getTopScorer()); // It should return the first player with score 0 - Taylor
 
 // ============================================
 // Exports
